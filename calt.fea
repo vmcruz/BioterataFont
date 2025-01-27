@@ -1,0 +1,61 @@
+feature calt {
+# GSUB feature: Contextual Alternates
+# Lookups: 1
+  @lt  = [Aacute aacute Eacute eacute Iacute iacute Oacute oacute Uacute uacute Udieresis udieresis Ntilde ntilde];
+  @ltB = [Aacute.bold aacute.bold Eacute.bold eacute.bold Iacute.bold iacute.bold Oacute.bold oacute.bold Uacute.bold uacute.bold Udieresis.bold udieresis.bold Ntilde.bold ntilde.bold];
+
+  @br  = [Acircumflex acircumflex Atilde atilde Agrave agrave Ccedilla ccedilla Ecircumflex ecircumflex Ocircumflex ocircumflex Otilde otilde];
+  @brB = [Acircumflex.bold acircumflex.bold Atilde.bold atilde.bold Agrave.bold agrave.bold Ccedilla.bold ccedilla.bold Ecircumflex.bold ecircumflex.bold Ocircumflex.bold ocircumflex.bold Otilde.bold otilde.bold];
+
+  # Some glyphs are already present in @lt and @br
+  @fr  = [Egrave egrave Edieresis edieresis Icircumflex icircumflex Idieresis idieresis Ugrave ugrave Ucircumflex ucircumflex quotesingle];
+  @frB = [Egrave.bold egrave.bold Edieresis.bold edieresis.bold Icircumflex.bold icircumflex.bold Idieresis.bold idieresis.bold Ugrave.bold ugrave.bold Ucircumflex.bold ucircumflex.bold quotesingle.bold];
+
+  @de  = [Adieresis adieresis Odieresis odieresis germandbls];
+  @deB = [Adieresis.bold adieresis.bold Odieresis.bold odieresis.bold germandbls.bold];
+
+  @azSp = [a-z A-Z @lt @br @fr @de];
+  @azSpB = [a.bold-z.bold A.bold-Z.bold @ltB @brB @frB @deB];
+
+  @all = [@azSp @azSpB];
+
+  #23, 24, 25
+  ignore sub @all @all @all @all @all @all @all @all @all @all @azSp' @all @all @all @all @all @all @all @all @all @all @all @all @all;
+  sub @all @all @all @all @all @all @all @all @all @azSp' @all @all @all @all @all @all @all @all @all @all @all @all @all by @azSpB;
+
+  #21, 22
+  ignore sub @all @all @all @all @all @all @all @all @all @azSp' @all @all @all @all @all @all @all @all @all @all @all @all;
+  sub @all @all @all @all @all @all @all @all @azSp' @all @all @all @all @all @all @all @all @all @all @all @all by @azSpB;
+
+  #18, 19, 20
+  ignore sub @all @all @all @all @all @all @all @all @azSp' @all @all @all @all @all @all @all @all @all @all;
+  sub @all @all @all @all @all @all @all @azSp' @all @all @all @all @all @all @all @all @all @all by @azSpB;
+
+  #16, 17
+  ignore sub @all @all @all @all @all @all @all @azSp' @all @all @all @all @all @all @all @all @all;
+  sub @all @all @all @all @all @all @azSp' @all @all @all @all @all @all @all @all @all by @azSpB;
+
+  #13, 14, 15
+  ignore sub @all @all @all @all @all @all @azSp' @all @all @all @all @all @all @all;
+  sub @all @all @all @all @all @azSp' @all @all @all @all @all @all @all by @azSpB;
+
+  #11, 12
+  ignore sub @all @all @all @all @all @azSp' @all @all @all @all @all @all;
+  sub @all @all @all @all @azSp' @all @all @all @all @all @all by @azSpB;
+
+  #8, 9, 10
+  ignore sub @all @all @all @all @azSp' @all @all @all @all;
+  sub @all @all @all @azSp' @all @all @all @all by @azSpB;
+
+  #6, 7
+  ignore sub @all @all @all @azSp' @all @all @all;
+  sub @all @all @azSp' @all @all @all by @azSpB;
+
+  #4, 5
+  ignore sub @all @all @azSp' @all @all;
+  sub @all @azSp' @all @all by @azSpB;
+
+  #1, 2, 3
+  ignore sub @all @azSp';
+  sub @azSp' by @azSpB;
+} calt;
