@@ -1,6 +1,13 @@
 feature calt {
 # GSUB feature: Contextual Alternates
 # Lookups: 1
+
+  @dlig  = [c_h.dlig c_t.dlig s_t];
+  @dligB = [c_h.dlig.bold c_t.dlig.bold s_t.bold];
+
+  @lig  = [T_h.liga f_f_b.liga f_f_i f_f_k.liga f_f_l f_f_t.liga f_b.liga f_f f_h.liga fi f_k.liga fl f_t.liga f_iacute.liga];
+  @ligB = [T_h.liga.bold f_f_b.liga.bold f_f_i.bold f_f_k.liga.bold f_f_l.bold f_f_t.liga.bold f_b.liga.bold f_f.bold f_h.liga.bold fi.bold f_k.liga.bold fl.bold f_t.liga.bold f_iacute.liga.bold];
+
   @lt  = [Aacute aacute Eacute eacute Iacute iacute Oacute oacute Uacute uacute Udieresis udieresis Ntilde ntilde];
   @ltB = [Aacute.bold aacute.bold Eacute.bold eacute.bold Iacute.bold iacute.bold Oacute.bold oacute.bold Uacute.bold uacute.bold Udieresis.bold udieresis.bold Ntilde.bold ntilde.bold];
 
@@ -14,8 +21,8 @@ feature calt {
   @de  = [Adieresis adieresis Odieresis odieresis germandbls];
   @deB = [Adieresis.bold adieresis.bold Odieresis.bold odieresis.bold germandbls.bold];
 
-  @azSp = [a-z A-Z @lt @br @fr @de];
-  @azSpB = [a.bold-z.bold A.bold-Z.bold @ltB @brB @frB @deB];
+  @azSp = [a-z A-Z @lt @br @fr @de @lig @dlig];
+  @azSpB = [a.bold-z.bold A.bold-Z.bold @ltB @brB @frB @deB @ligB @dligB];
 
   @all = [@azSp @azSpB];
 
