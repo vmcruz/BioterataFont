@@ -3,6 +3,9 @@ Easy to read, Fast Reading Font
 
 ![Bioterata Preview](./bioterata.png)
 
+## Download
+**[Bioterata.ttf v0.1.1](https://github.com/vmcruz/BioterataFont/releases/download/v0.1.1/Bioterata.ttf)**
+
 ### Acknowledgement
 
 - This font is a derivative work based off [Literata](https://github.com/googlefonts/literata). It features `Contextual Alternates` to support Fast Reading.
